@@ -146,6 +146,48 @@
         rgba(0,0,0,0) 100%
     );
 }
+        @media (max-width: 768px) {
+            .card-container {
+                width: 95vw; /* Use vw for better fit on small screens */
+                height: 70vh; /* Adjust height for mobile portrait */
+                max-width: none; /* Remove max-width constraint */
+                max-height: none; /* Remove max-height constraint */
+            }
+
+            .letter h1 {
+                font-size: 1.8rem; /* Smaller font size for mobile */
+            }
+
+            .letter p {
+                font-size: 0.8rem; /* Smaller font size for mobile */
+            }
+
+            .letter .signature {
+                font-size: 1rem; /* Smaller font size for mobile */
+            }
+
+            .letter {
+                padding: 1rem; /* Reduced padding */
+            }
+            .envelope-message {
+                font-size: 0.7rem; /* Smaller font size for mobile */
+                top: 10px; /* Adjust position */
+                left: 10px; /* Adjust position */
+            }
+            .stamp {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+                top: 10%;
+                right: 10%;
+            }
+            .ribbon.vertical { width: 20px; }
+            .ribbon.horizontal { height: 20px; }
+            .corner-decoration {
+                width: 100px;
+                height: 100px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -299,9 +341,9 @@
                 })
                 .add({
                     targets: [stamp, ribbonWrapper],
-                    translateY: '-200%',
-                    rotate: '45deg',
-                    opacity: 0,
+                    translateY: ['-200%', '0%'],
+                    rotate: ['45deg', '0deg'],
+                    opacity: [0, 1],
                     duration: 1200,
                 })
                 .add({
